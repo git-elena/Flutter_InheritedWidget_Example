@@ -14,15 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Example',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Example of InheritedWidget'),
     );
   }
 }
 
+/// должен быть StatefulWidget
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -33,8 +34,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // int _counter = 0;
 
+  // TODO фактическое хранилище данных
   MyModel model = MyModel();
 
   @override
@@ -44,19 +45,21 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
+        // TODO наследование от InheritedWidget
         child: MyInheritedProvider(
+            // TODO передача данных в InheritedWidget
             model: model,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                MyText(),
+                MyText(),//TODO Чтение
                 SizedBox(height: 24,),
-                MyButton(),
+                MyButton(),//TODO Запись
 
               ],
             )
-        ) //(val: _counter),
+        )
       ),
     );
   }

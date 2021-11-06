@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inherited_widget/inherited_widget.dart';
 
-// TODO :: TEXT
+// TODO :: TEXT - Чтение с InheritedWidget
 class MyText extends StatefulWidget {
   const MyText({Key? key,
     // required this.val,
@@ -39,7 +39,7 @@ class _MyTextState extends State<MyText> {
   }
 }
 
-// TODO :: BUTTON
+// TODO :: BUTTON - Запись в InheritedWidget
 class MyButton extends StatelessWidget {
   const MyButton({Key? key}) : super(key: key);
 
